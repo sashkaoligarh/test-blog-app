@@ -31,7 +31,7 @@ const Body = styled.p`
 const Card  : React.FC<Post> = props => {
     const router = useRouter()
     const ToUpper = (str:string) :string => {
-        return str[0].toUpperCase() + props.obj.body.slice(1).padStart(540, 'some text')
+        return str ? str[0].toUpperCase() + props.obj.body.slice(1).padStart(540, 'some text') : null
     } 
 
     return(
@@ -40,21 +40,20 @@ const Card  : React.FC<Post> = props => {
             <Title>
                 {props.obj.title ? props.obj.title[0].toUpperCase() + props.obj.title.slice(1) : null}
             </Title>
-            <a onClick={() =>  {
-                router.push({
-                pathname: `/posts/[Post]`,
+            <Link href = {{
+                pathname: '/posts/[Post]',
                 query: {
                     Post: props.obj.id, 
                     title:props.obj.title, 
                     body: ToUpper(props.obj.body),
                     img: props.img
                 }
-                })
-            }}>
+            }} ><a>
                 <Body>
                     {props.obj.body ? ToUpper(props.obj.body).slice(0,15) : null}
                 </Body>
                 </a>
+                </Link>
         </CardComponent>
     )
 }

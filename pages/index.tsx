@@ -67,7 +67,7 @@ const  Home :React.FC<Props>  = (props) => {
   const links = [
     {link:'/posts', text:'Ко всем постам'},
     {link:'/createPost', text:'Создать Пост'}]
-  useEffect( () => {
+  useEffect( () :void => {
     async function loadData() {
     let data :PostsState = await  postsApi.GetPostsList()
     console.log(data, 'data')
@@ -75,7 +75,7 @@ const  Home :React.FC<Props>  = (props) => {
     console.log(props)
     }
     loadData()
-  })
+  },[])
   
   return (
     <Container>
@@ -86,9 +86,9 @@ const  Home :React.FC<Props>  = (props) => {
       <Header>
         <HeaderText>Blog</HeaderText>
         <HeaderLinks>
-          {links.map(item => (
-            <Link href={`${item.link}`}>
-              <LinkHead>{item.text}</LinkHead>
+          {links.map((item, index) => (
+            <Link key={index} href={`${item.link}`}>
+              <LinkHead key={index}>{item.text}</LinkHead>
             </Link>
           ))}
         </HeaderLinks>

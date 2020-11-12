@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
-import { Post } from '../../redux/types'
 import { useRouter } from 'next/router'
+import {Data} from '../../../interfaces/posts'
 
 
 const Container = styled.div`
@@ -25,7 +25,7 @@ const Block = styled.div`
 const Text = styled.p`
     font-size:1.5vw;
 `
-const Title = styled.h1`
+const Title = styled.p`
     font-size:2vw;
 `
 const LinkA = styled.a`
@@ -34,7 +34,7 @@ const LinkA = styled.a`
 
 `
 
-const Posts : React.FC<Post> = () => {
+const Posts : React.FC<Data> = () => {
 
     const router = useRouter()
     const { title, body, img } = router.query
@@ -43,9 +43,9 @@ const Posts : React.FC<Post> = () => {
             <LinkA onClick={() => router.back()}>Вернуться назад</LinkA>
             <Container>
                 <Block>
-                    <Title>{title[0].toUpperCase() + title.slice(1)}</Title>
+                    <Title>{title ? title[0].toUpperCase() + title.slice(1) : null}</Title>
                     <IMG src = {`${img}`}/>
-                    <Text>{body[0].toUpperCase() + body.slice(1)}</Text>
+                    <Text>{body ? body[0].toUpperCase() + body.slice(1) : null}</Text>
                 </Block>
             </Container>
         </>

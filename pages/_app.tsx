@@ -8,14 +8,13 @@ import { AppProps } from 'next/dist/next-server/lib/router/router';
 
 const GlobalStyles = createGlobalStyle`
 
-    @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500');
     body {
         margin: 0;
-        font-family: 'Roboto', sans-serif;
         font-weight: 400;
         background: #EFEFF4;
     }
     a{
+      text-decoration:none;
       &:hover{
     color:red;
     cursor: pointer

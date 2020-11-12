@@ -8,7 +8,6 @@ const instance = axios.create({
 
 export const postsApi = {
   GetPostsList(){
-    console.log('api')
      return instance.get(`posts`)
      .then(response => response.data)
      .catch(e => console.log(e))
