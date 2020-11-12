@@ -3,14 +3,7 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-interface Post {
-    obj:{
-    title: string
-    body: string
-    id:number
-    }
-    img:string
-}
+import {Post} from '../interfaces/posts'
 
 const CardComponent = styled.div`
     display:flex;
@@ -37,7 +30,6 @@ const Body = styled.p`
 
 const Card  : React.FC<Post> = props => {
     const router = useRouter()
-    const [bodys, setBodys] = useState('')
     const ToUpper = (str:string) :string => {
         return str[0].toUpperCase() + props.obj.body.slice(1).padStart(540, 'some text')
     } 

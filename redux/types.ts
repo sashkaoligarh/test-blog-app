@@ -8,10 +8,6 @@ export  interface Post {
 export interface PostsState {
     posts: Post[]
 }
-export interface PostsStates {
-    posts: Post[]
-}
-
 
 interface getPostsAction { 
     type: typeof GET_POSTS

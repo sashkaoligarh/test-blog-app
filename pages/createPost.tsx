@@ -33,10 +33,10 @@ const Linked = styled.a`
 `
 
 const NewPost: React.FC = () => {
-    const [title, setTitle] = useState('')
-    const [body, setBody] = useState('')
+    const [title, setTitle] = useState<string>('')
+    const [body, setBody] = useState<string>('')
 
-    const SendPost = () => {
+    const SendPost = ():void => {
         console.log('sendPost');
         let post = {
             id:Date.now(),

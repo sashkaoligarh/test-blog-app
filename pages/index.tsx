@@ -8,6 +8,7 @@ import {PostsState} from '../redux/types'
 import Link from 'next/link'
 import styled from 'styled-components'
 import BlogCard from '../Components/BlogCard'
+import {Props} from '../interfaces/posts'
 
 const Container = styled.div`
   display:flex;
@@ -60,24 +61,20 @@ const LinkHead = styled.a`
 
 `
 
-interface Props {
-  GetPosts({})
-  posts: any
-}
+
 
 const  Home :React.FC<Props>  = (props) => {
   const links = [
     {link:'/posts', text:'Ко всем постам'},
     {link:'/createPost', text:'Создать Пост'}]
   useEffect( () => {
-  async function loadData() {
-  let data :any = await  postsApi.GetPostsList()
-  console.log(data, 'data')
-  await props.GetPosts(data)
-  console.log(props)
- }
+    async function loadData() {
+    let data :PostsState = await  postsApi.GetPostsList()
+    console.log(data, 'data')
+    await props.GetPosts(data)
+    console.log(props)
+    }
     loadData()
-
   })
   
   return (

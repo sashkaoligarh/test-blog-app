@@ -7,6 +7,7 @@ import BlogCard from '../../Components/BlogCard'
 import {bindActionCreators} from 'redux'
 import * as actions from '../../redux/actions'
 import Link from 'next/link'
+import {Props} from '../../interfaces/posts'
 
 const Container = styled.div`
     display:flex;
@@ -28,12 +29,6 @@ const LinkText = styled.a`
 
 
 `
-interface Props {
-    GetPosts({})
-    posts: any
-  }
-  
-
 const Posts : React.FC<Props> = (props) => {
     return(
         <Container>
