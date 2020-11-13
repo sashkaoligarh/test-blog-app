@@ -50,7 +50,7 @@ const Card  : React.FC<Post> = props => {
                 }
             }} ><a>
                 <Body>
-                    {props.obj.body ? ToUpper(props.obj.body).slice(0,15) : null}
+                    {props.obj.body ? ToUpper(props.obj.body).slice(0,100) : null}...
                 </Body>
                 </a>
                 </Link>
