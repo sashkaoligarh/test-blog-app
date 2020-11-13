@@ -96,7 +96,7 @@ const  Home :React.FC<Props>  = (props) => {
       </Header>
       <Body>
         <Posts>
-          {props.posts.slice(0, 6).reverse().map(item => (
+          {props.posts.reverse().slice(0, 6).map(item => (
             <BlogCard key={item.id} obj={item} img={'/test.jpg'}/>
           ))}
         </Posts>
