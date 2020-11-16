@@ -1,7 +1,4 @@
 Демо доступно по ссылке - [https://test-blog-app.sashkaoligarh.vercel.app/](https://test-blog-app.sashkaoligarh.vercel.app/)
-
-Аналитика согласно chrome lighthouse
-![](https://github.com/sashkaoligarh/test-blog-app/blob/main/public/analytic.png)
 ## Getting Started
 
 First, run the development server:
